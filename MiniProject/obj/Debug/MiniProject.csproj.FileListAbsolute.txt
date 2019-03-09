@@ -1,0 +1,12 @@
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\bin\Debug\MiniProject.exe.config
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\bin\Debug\MiniProject.exe
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\bin\Debug\MiniProject.pdb
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.csprojResolveAssemblyReference.cache
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_AddNewStudent.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Properties.Resources.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.csproj.GenerateResource.Cache
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.exe
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.pdb
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_Students.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.add_clo.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_CLO.resources
