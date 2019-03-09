@@ -8,5 +8,7 @@ F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.exe
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.pdb
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_Students.resources
-F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.add_clo.resources
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_CLO.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_AddCLO.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_AddRubric.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_Rubrics.resources

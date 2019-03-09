@@ -243,6 +243,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form_Students";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course Management System";
             this.Load += new System.EventHandler(this.MiniProject_Load);
             this.panel1.ResumeLayout(false);

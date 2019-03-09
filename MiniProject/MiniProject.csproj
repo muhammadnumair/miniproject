@@ -46,17 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="add_clo.cs">
+    <Compile Include="Form_AddCLO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="add_clo.Designer.cs">
-      <DependentUpon>add_clo.cs</DependentUpon>
+    <Compile Include="Form_AddCLO.Designer.cs">
+      <DependentUpon>Form_AddCLO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AddRubric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AddRubric.Designer.cs">
+      <DependentUpon>Form_AddRubric.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_CLO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_CLO.Designer.cs">
       <DependentUpon>Form_CLO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Rubrics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Rubrics.Designer.cs">
+      <DependentUpon>Form_Rubrics.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Students.cs">
       <SubType>Form</SubType>
@@ -77,11 +89,17 @@
       <DependentUpon>ProjectBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="add_clo.resx">
-      <DependentUpon>add_clo.cs</DependentUpon>
+    <EmbeddedResource Include="Form_AddCLO.resx">
+      <DependentUpon>Form_AddCLO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AddRubric.resx">
+      <DependentUpon>Form_AddRubric.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_CLO.resx">
       <DependentUpon>Form_CLO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Rubrics.resx">
+      <DependentUpon>Form_Rubrics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Students.resx">
       <DependentUpon>Form_Students.cs</DependentUpon>

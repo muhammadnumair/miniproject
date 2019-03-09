@@ -1,6 +1,6 @@
 ﻿namespace MiniProject
 {
-    partial class Form_CLO
+    partial class Form_Rubrics
     {
         /// <summary>
         /// Required designer variable.
@@ -36,10 +36,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView_CLO = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Rubric = new System.Windows.Forms.DataGridView();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Rubrics = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Levels = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,7 +47,7 @@
             this.btn_students = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CLO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Rubric)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -61,7 +61,7 @@
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(164, 34);
             this.add_button.TabIndex = 1;
-            this.add_button.Text = "Add New CLO";
+            this.add_button.Text = "Add New Rubric";
             this.add_button.UseVisualStyleBackColor = true;
             this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
@@ -75,7 +75,6 @@
             this.form_heading.Size = new System.Drawing.Size(66, 35);
             this.form_heading.TabIndex = 3;
             this.form_heading.Text = "CMS";
-            this.form_heading.Click += new System.EventHandler(this.form_heading_Click);
             // 
             // panel1
             // 
@@ -88,7 +87,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(698, 52);
             this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label6
             // 
@@ -96,12 +94,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(50, 3);
+            this.label6.Location = new System.Drawing.Point(28, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 35);
+            this.label6.Size = new System.Drawing.Size(182, 35);
             this.label6.TabIndex = 3;
-            this.label6.Text = "CLO\'s List";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.Text = "Rubrics\'s List";
             // 
             // tableLayoutPanel3
             // 
@@ -110,30 +107,29 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.dataGridView_CLO, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(10, 159);
+            this.tableLayoutPanel3.Controls.Add(this.dataGridView_Rubric, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(13, 160);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(670, 291);
-            this.tableLayoutPanel3.TabIndex = 12;
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+            this.tableLayoutPanel3.TabIndex = 16;
             // 
-            // dataGridView_CLO
+            // dataGridView_Rubric
             // 
-            this.dataGridView_CLO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView_Rubric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_CLO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_CLO.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_Rubric.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Rubric.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete,
             this.Edit,
-            this.Rubrics});
-            this.dataGridView_CLO.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView_CLO.Name = "dataGridView_CLO";
-            this.dataGridView_CLO.Size = new System.Drawing.Size(664, 285);
-            this.dataGridView_CLO.TabIndex = 0;
-            this.dataGridView_CLO.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Students_CellContentClick);
+            this.Levels});
+            this.dataGridView_Rubric.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_Rubric.Name = "dataGridView_Rubric";
+            this.dataGridView_Rubric.Size = new System.Drawing.Size(664, 285);
+            this.dataGridView_Rubric.TabIndex = 0;
+            this.dataGridView_Rubric.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CLO_CellContentClick);
             // 
             // Delete
             // 
@@ -152,13 +148,13 @@
             this.Edit.HeaderText = "Edit";
             this.Edit.Name = "Edit";
             // 
-            // Rubrics
+            // Levels
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "Rubrics";
-            this.Rubrics.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Rubrics.HeaderText = "Rubrics";
-            this.Rubrics.Name = "Rubrics";
+            dataGridViewCellStyle3.NullValue = "Levels";
+            this.Levels.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Levels.HeaderText = "Rubrics";
+            this.Levels.Name = "Levels";
             // 
             // tableLayoutPanel2
             // 
@@ -169,13 +165,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.32836F));
             this.tableLayoutPanel2.Controls.Add(this.add_button, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 112);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 113);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(670, 41);
-            this.tableLayoutPanel2.TabIndex = 11;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
+            this.tableLayoutPanel2.TabIndex = 15;
             // 
             // tableLayoutPanel1
             // 
@@ -185,13 +180,12 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-5, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(-2, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(704, 58);
-            this.tableLayoutPanel1.TabIndex = 10;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tableLayoutPanel1.TabIndex = 14;
             // 
             // tableLayoutPanel4
             // 
@@ -204,13 +198,12 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btn_students, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(-3, 57);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 58);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(699, 34);
-            this.tableLayoutPanel4.TabIndex = 13;
-            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
+            this.tableLayoutPanel4.TabIndex = 17;
             // 
             // button1
             // 
@@ -246,9 +239,8 @@
             this.btn_students.TabIndex = 15;
             this.btn_students.Text = "Students";
             this.btn_students.UseVisualStyleBackColor = false;
-            this.btn_students.Click += new System.EventHandler(this.btn_students_Click);
             // 
-            // Form_CLO
+            // Form_Rubrics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,14 +250,14 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel4);
-            this.Name = "Form_CLO";
+            this.Name = "Form_Rubrics";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CLO\'s";
-            this.Load += new System.EventHandler(this.Form_CLO_Load);
+            this.Text = "Rubrics";
+            this.Load += new System.EventHandler(this.Form_Rubrics_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CLO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Rubric)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -281,14 +273,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridView dataGridView_CLO;
+        private System.Windows.Forms.DataGridView dataGridView_Rubric;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button btn_students;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_students;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Rubrics;
+        private System.Windows.Forms.DataGridViewButtonColumn Levels;
     }
 }
