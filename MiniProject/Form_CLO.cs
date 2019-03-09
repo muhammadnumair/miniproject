@@ -77,6 +77,26 @@ namespace MiniProject
                 DataGridViewRow selectedRow = dataGridView_CLO.Rows[row_index];
                 string a = Convert.ToString(selectedRow.Cells["Id"].Value);
                 conn.Open();
+                //using (SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True"))
+                //{
+                //    string oString = "Select * from Rubric where CloId='" + a + "'";
+                //    SqlCommand oCmd = new SqlCommand(oString, conn);
+                //    using (SqlDataReader oReader = oCmd.ExecuteReader())
+                //    {
+                //        string Id = 0.ToString();
+                //        while (oReader.Read())
+                //        {
+                //            Id = oReader["Id"].ToString();
+                //        }
+                //        string query1 = "DELETE FROM RubricLevel WHERE RubricId = '" + Id + "'";
+                //        SqlCommand command1 = new SqlCommand(query1, conn);
+                //        command1.ExecuteNonQuery();
+                //    }
+                //}
+                string query2 = "DELETE FROM Rubric WHERE CloId = '" + a + "'";
+                SqlCommand command2 = new SqlCommand(query2, conn);
+                command2.ExecuteNonQuery();
+
                 string query = "DELETE FROM Clo WHERE Id = '" + a + "'";
                 SqlCommand command = new SqlCommand(query, conn);
                 command.ExecuteNonQuery();
