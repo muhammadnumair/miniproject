@@ -1,6 +1,6 @@
 ﻿namespace MiniProject
 {
-    partial class Form_Rubrics
+    partial class Form_Levels
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.add_button = new System.Windows.Forms.Button();
             this.form_heading = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView_Rubric = new System.Windows.Forms.DataGridView();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Levels = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView_Level = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_students = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Rubric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Level)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -61,7 +59,7 @@
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(164, 34);
             this.add_button.TabIndex = 1;
-            this.add_button.Text = "Add New Rubric";
+            this.add_button.Text = "Add New Level";
             this.add_button.UseVisualStyleBackColor = true;
             this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
@@ -70,7 +68,7 @@
             this.form_heading.AutoSize = true;
             this.form_heading.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_heading.ForeColor = System.Drawing.Color.White;
-            this.form_heading.Location = new System.Drawing.Point(14, 8);
+            this.form_heading.Location = new System.Drawing.Point(17, 8);
             this.form_heading.Name = "form_heading";
             this.form_heading.Size = new System.Drawing.Size(66, 35);
             this.form_heading.TabIndex = 3;
@@ -94,11 +92,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(28, 3);
+            this.label6.Location = new System.Drawing.Point(31, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 35);
+            this.label6.Size = new System.Drawing.Size(175, 35);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Rubrics\'s List";
+            this.label6.Text = "Rubric Level";
             // 
             // tableLayoutPanel3
             // 
@@ -107,54 +105,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.dataGridView_Rubric, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(13, 160);
+            this.tableLayoutPanel3.Controls.Add(this.dataGridView_Level, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(13, 158);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(670, 291);
             this.tableLayoutPanel3.TabIndex = 16;
             // 
-            // dataGridView_Rubric
+            // dataGridView_Level
             // 
-            this.dataGridView_Rubric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView_Level.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_Rubric.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Rubric.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_Level.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Level.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete,
-            this.Edit,
-            this.Levels});
-            this.dataGridView_Rubric.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView_Rubric.Name = "dataGridView_Rubric";
-            this.dataGridView_Rubric.Size = new System.Drawing.Size(664, 285);
-            this.dataGridView_Rubric.TabIndex = 0;
-            this.dataGridView_Rubric.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CLO_CellContentClick);
-            // 
-            // Delete
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "Delete";
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            // 
-            // Edit
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "Edit";
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            // 
-            // Levels
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "Levels";
-            this.Levels.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Levels.HeaderText = "Rubrics";
-            this.Levels.Name = "Levels";
+            this.Edit});
+            this.dataGridView_Level.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_Level.Name = "dataGridView_Level";
+            this.dataGridView_Level.Size = new System.Drawing.Size(664, 285);
+            this.dataGridView_Level.TabIndex = 0;
+            this.dataGridView_Level.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Level_CellContentClick);
             // 
             // tableLayoutPanel2
             // 
@@ -165,7 +137,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.32836F));
             this.tableLayoutPanel2.Controls.Add(this.add_button, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 113);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 111);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -180,7 +152,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-2, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(-2, -1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -198,7 +170,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btn_students, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 58);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 56);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -241,7 +213,24 @@
             this.btn_students.UseVisualStyleBackColor = false;
             this.btn_students.Click += new System.EventHandler(this.btn_students_Click);
             // 
-            // Form_Rubrics
+            // Delete
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = "Delete";
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            // 
+            // Edit
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.NullValue = "Edit";
+            this.Edit.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            // 
+            // Form_Levels
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -251,14 +240,14 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel4);
-            this.Name = "Form_Rubrics";
+            this.Name = "Form_Levels";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Rubrics";
-            this.Load += new System.EventHandler(this.Form_Rubrics_Load);
+            this.Text = "Rubrics Levels";
+            this.Load += new System.EventHandler(this.Form_Levels_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Rubric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Level)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -274,7 +263,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridView dataGridView_Rubric;
+        private System.Windows.Forms.DataGridView dataGridView_Level;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -282,6 +271,5 @@
         private System.Windows.Forms.Button btn_students;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Levels;
     }
 }

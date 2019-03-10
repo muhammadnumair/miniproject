@@ -184,7 +184,9 @@ namespace MiniProject
 
         private void btn_students_Click(object sender, EventArgs e)
         {
-
+            Form_Students f = new Form_Students();
+            f.Show();
+            this.Hide();
         }
     }
 }
