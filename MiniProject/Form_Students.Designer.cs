@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.add_button = new System.Windows.Forms.Button();
             this.form_heading = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,16 +36,23 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_Students = new System.Windows.Forms.DataGridView();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.text_search = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.filter_by_status = new System.Windows.Forms.ComboBox();
+            this.btn_search = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_students = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Students)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,9 +60,9 @@
             // 
             this.add_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.add_button.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_button.Location = new System.Drawing.Point(503, 3);
+            this.add_button.Location = new System.Drawing.Point(509, 3);
             this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(164, 34);
+            this.add_button.Size = new System.Drawing.Size(164, 32);
             this.add_button.TabIndex = 1;
             this.add_button.Text = "Add New Student";
             this.add_button.UseVisualStyleBackColor = true;
@@ -84,7 +89,7 @@
             this.panel1.Controls.Add(this.form_heading);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(698, 52);
+            this.panel1.Size = new System.Drawing.Size(704, 52);
             this.panel1.TabIndex = 5;
             // 
             // label6
@@ -93,7 +98,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(22, 3);
+            this.label6.Location = new System.Drawing.Point(23, 1);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(236, 35);
             this.label6.TabIndex = 3;
@@ -112,7 +117,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(704, 58);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 58);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // tableLayoutPanel2
@@ -124,11 +129,11 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.0597F));
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.add_button, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 112);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 110);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(670, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(676, 38);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
             // tableLayoutPanel3
@@ -139,11 +144,12 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.dataGridView_Students, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 159);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 154);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(670, 291);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(680, 304);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
             // dataGridView_Students
@@ -152,34 +158,102 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Students.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Students.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Delete,
-            this.Edit});
             this.dataGridView_Students.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_Students.Name = "dataGridView_Students";
-            this.dataGridView_Students.Size = new System.Drawing.Size(664, 285);
+            this.dataGridView_Students.Size = new System.Drawing.Size(674, 298);
             this.dataGridView_Students.TabIndex = 0;
             this.dataGridView_Students.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Students_CellContentClick);
             // 
-            // Delete
+            // tableLayoutPanel5
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "Delete";
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
+            this.tableLayoutPanel5.ColumnCount = 4;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62531F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62531F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62531F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.12407F));
+            this.tableLayoutPanel5.Controls.Add(this.text_search, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.filter_by_status, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btn_search, 3, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(16, 461);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(667, 31);
+            this.tableLayoutPanel5.TabIndex = 10;
             // 
-            // Edit
+            // text_search
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "Edit";
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
+            this.text_search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.text_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.text_search.Enabled = false;
+            this.text_search.Font = new System.Drawing.Font("Trebuchet MS", 12F);
+            this.text_search.Location = new System.Drawing.Point(397, 3);
+            this.text_search.Name = "text_search";
+            this.text_search.Size = new System.Drawing.Size(191, 26);
+            this.text_search.TabIndex = 17;
+            this.text_search.Visible = false;
+            this.text_search.TextChanged += new System.EventHandler(this.text_search_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(87, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 18);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Filter By Status";
+            this.label1.Visible = false;
+            // 
+            // filter_by_status
+            // 
+            this.filter_by_status.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.filter_by_status.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.filter_by_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filter_by_status.Enabled = false;
+            this.filter_by_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.filter_by_status.Font = new System.Drawing.Font("Trebuchet MS", 12F);
+            this.filter_by_status.FormattingEnabled = true;
+            this.filter_by_status.Items.AddRange(new object[] {
+            "All",
+            "Active",
+            "InActive"});
+            this.filter_by_status.Location = new System.Drawing.Point(200, 3);
+            this.filter_by_status.Name = "filter_by_status";
+            this.filter_by_status.Size = new System.Drawing.Size(191, 30);
+            this.filter_by_status.TabIndex = 15;
+            this.filter_by_status.Tag = "Select Status";
+            this.filter_by_status.Visible = false;
+            this.filter_by_status.SelectedIndexChanged += new System.EventHandler(this.combo_status_SelectedIndexChanged);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_search.Enabled = false;
+            this.btn_search.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Bold);
+            this.btn_search.Location = new System.Drawing.Point(594, 3);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(70, 25);
+            this.btn_search.TabIndex = 18;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Visible = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // tableLayoutPanel4
             // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
             this.tableLayoutPanel4.ColumnCount = 5;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -189,12 +263,15 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btn_students, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(-1, 57);
+            this.tableLayoutPanel4.Controls.Add(this.button2, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.button3, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.button4, 4, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 56);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(699, 34);
-            this.tableLayoutPanel4.TabIndex = 9;
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(700, 45);
+            this.tableLayoutPanel4.TabIndex = 14;
             // 
             // button1
             // 
@@ -206,9 +283,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(142, 3);
+            this.button1.Location = new System.Drawing.Point(143, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 28);
+            this.button1.Size = new System.Drawing.Size(134, 39);
             this.button1.TabIndex = 17;
             this.button1.Text = "CLO\'s";
             this.button1.UseVisualStyleBackColor = false;
@@ -226,19 +303,78 @@
             this.btn_students.ForeColor = System.Drawing.Color.White;
             this.btn_students.Location = new System.Drawing.Point(3, 3);
             this.btn_students.Name = "btn_students";
-            this.btn_students.Size = new System.Drawing.Size(133, 28);
+            this.btn_students.Size = new System.Drawing.Size(134, 39);
             this.btn_students.TabIndex = 15;
             this.btn_students.Text = "Students";
             this.btn_students.UseVisualStyleBackColor = false;
             this.btn_students.Click += new System.EventHandler(this.btn_students_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.OliveDrab;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(283, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(134, 39);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Assessment";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.DarkGreen;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(423, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(134, 39);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Attendence";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Enabled = false;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(563, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(134, 39);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Result";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form_Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(694, 462);
+            this.ClientSize = new System.Drawing.Size(700, 462);
             this.Controls.Add(this.tableLayoutPanel4);
+            this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -253,6 +389,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Students)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -267,11 +405,17 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView dataGridView_Students;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.ComboBox filter_by_status;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox text_search;
+        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button btn_students;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_students;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

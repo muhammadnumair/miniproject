@@ -23,11 +23,11 @@ namespace MiniProject
         private void StylizeGridView()
         {
             // Changing Names Of The Grid View Columns Headings
-            dataGridView_Rubric.Columns[0].HeaderText = "Delete";
-            dataGridView_Rubric.Columns[1].HeaderText = "Edit";
+            dataGridView_Rubric.Columns[0].HeaderText = "Id";
+            dataGridView_Rubric.Columns[1].HeaderText = "Details";
             dataGridView_Rubric.Columns[2].HeaderText = "Levels";
-            dataGridView_Rubric.Columns[3].HeaderText = "Id";
-            dataGridView_Rubric.Columns[4].HeaderText = "Details";
+            dataGridView_Rubric.Columns[3].HeaderText = "Edit";
+            dataGridView_Rubric.Columns[4].HeaderText = "Delete";
             // END:: NAMES
 
             // Changing Heading Fonts
@@ -52,7 +52,41 @@ namespace MiniProject
             da.Fill(dt);
             dataGridView_Rubric.DataSource = dt;
             conn.Close();
-            StylizeGridView();
+
+            //Buttons
+
+            //Rubrics
+            DataGridViewButtonColumn rubricsButtonColumn = new DataGridViewButtonColumn();
+            rubricsButtonColumn.Name = "Levels";
+            rubricsButtonColumn.Text = "Levels";
+            rubricsButtonColumn.DefaultCellStyle.NullValue = "Levels";
+            int columnIndex2 = 2;
+            if (dataGridView_Rubric.Columns["Levels"] == null)
+            {
+                dataGridView_Rubric.Columns.Insert(columnIndex2, rubricsButtonColumn);
+            }
+
+            //Edit
+            DataGridViewButtonColumn EditButtonColumn = new DataGridViewButtonColumn();
+            EditButtonColumn.Name = "Edit";
+            EditButtonColumn.Text = "Edit";
+            EditButtonColumn.DefaultCellStyle.NullValue = "Edit";
+            int columnIndex = 3;
+            if (dataGridView_Rubric.Columns["Edit"] == null)
+            {
+                dataGridView_Rubric.Columns.Insert(columnIndex, EditButtonColumn);
+            }
+
+            //Delete
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "Delete";
+            deleteButtonColumn.Text = "Delete";
+            deleteButtonColumn.DefaultCellStyle.NullValue = "Delete";
+            int columnIndex1 = 4;
+            if (dataGridView_Rubric.Columns["Delete"] == null)
+            {
+                dataGridView_Rubric.Columns.Insert(columnIndex1, deleteButtonColumn);
+            }
         }
 
         private void dataGridView_CLO_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,23 +94,33 @@ namespace MiniProject
             var senderGrid = (DataGridView)sender;
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0 && e.ColumnIndex == 0)
+                e.RowIndex >= 0 && e.ColumnIndex == 4)
             {
-                int row_index = e.RowIndex;
-                DataGridViewRow selectedRow = dataGridView_Rubric.Rows[row_index];
-                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                conn.Open();
-                string query1 = "DELETE FROM RubricLevel WHERE RubricId = '" + a + "'";
-                SqlCommand command1 = new SqlCommand(query1, conn);
-                command1.ExecuteNonQuery();
-                string query = "DELETE FROM Rubric WHERE Id = '" + a + "'";
-                SqlCommand command = new SqlCommand(query, conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-                loadDataGridView();
+                var confirmResult = MessageBox.Show("Rubric & all its levels will get deleted, Are you sure to delete this item??",
+                                     "Confirm Delete!!",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    int row_index = e.RowIndex;
+                    DataGridViewRow selectedRow = dataGridView_Rubric.Rows[row_index];
+                    string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                    conn.Open();
+                    string query1 = "DELETE FROM RubricLevel WHERE RubricId = '" + a + "'";
+                    SqlCommand command1 = new SqlCommand(query1, conn);
+                    command1.ExecuteNonQuery();
+                    string query = "DELETE FROM Rubric WHERE Id = '" + a + "'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    loadDataGridView();
+                }
+                else
+                {
+                    // If 'No', do something here.
+                }
             }
             else if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0 && e.ColumnIndex == 1)
+                e.RowIndex >= 0 && e.ColumnIndex == 3)
             {
                 int row_index = e.RowIndex;
                 DataGridViewRow selectedRow = dataGridView_Rubric.Rows[row_index];
@@ -112,12 +156,14 @@ namespace MiniProject
                 int Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
                 Form_Levels f = new Form_Levels(Id);
                 f.Show();
+                this.Hide();
             }
         }
 
         private void Form_Rubrics_Load(object sender, EventArgs e)
         {
             loadDataGridView();
+            StylizeGridView();
         }
 
         private void add_button_Click(object sender, EventArgs e)
@@ -136,6 +182,32 @@ namespace MiniProject
         private void btn_students_Click(object sender, EventArgs e)
         {
             Form_Students f = new Form_Students();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form_Assessment f = new Form_Assessment();
+            f.Show();
+            this.Hide();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form_Attendence f = new Form_Attendence();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form_Result f = new Form_Result();
             f.Show();
             this.Hide();
         }

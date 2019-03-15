@@ -14,3 +14,8 @@ F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_Rubrics.resources
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_AddLevel.resources
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_Levels.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_AddAssessment.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_Assessment.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_AddAssessmentComponent.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_AssessmentComponents.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_MarkAttendence.resources

@@ -27,53 +27,102 @@ namespace MiniProject
             text_cnumber.Text = values[3];
             text_email.Text = values[4];
             text_rnumber.Text = values[5];
+            if (values[6] == "5")
+            {
+                combo_status.SelectedIndex = combo_status.FindStringExact("Active");
+            }else if (values[6] == "6")
+            {
+                combo_status.SelectedIndex = combo_status.FindStringExact("InActive");
+            }
             add_button.Text = "Update Record";
         }
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
-            conn.Open();
-            string query1 = "Select Top(1) * from Lookup where Name = '"+combo_status.Text+"'";
-            SqlCommand command = new SqlCommand(query1, conn);
-            int LookupId = 0;
-            using (SqlDataReader reader = command.ExecuteReader())
+            if(text_email.Text != "" && text_fname.Text != "" && text_lname.Text != "" && text_cnumber.Text != "" && text_rnumber.Text != "" && combo_status.Text != "" && combo_status.Text != "Select Status")
             {
-                while (reader.Read())
+                SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
+                conn.Open();
+                string query1 = "Select Top(1) * from Lookup where Name = '" + combo_status.Text + "'";
+                SqlCommand command = new SqlCommand(query1, conn);
+                int LookupId = 0;
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    //Send these to your WinForms textboxes
-                    LookupId = Convert.ToInt32(reader["LookupId"]);
-                    break;
+                    while (reader.Read())
+                    {
+                        //Send these to your WinForms textboxes
+                        LookupId = Convert.ToInt32(reader["LookupId"]);
+                        break;
+                    }
                 }
-            }
 
-            if (add_button.Text == "Add Student")
-            {
-                string query = "Insert into Student (FirstName, LastName, Contact, Email, RegistrationNumber, Status) values('" + text_fname.Text + "', '" + text_lname.Text + "', '" + text_cnumber.Text + "', '" + text_email.Text + "', '" + text_rnumber.Text + "', '" + LookupId + "')";
-                command = new SqlCommand(query, conn);
-                int i = command.ExecuteNonQuery();
-                if (i != 0)
+                if (add_button.Text == "Add Student")
                 {
-                    MessageBox.Show("Student Record Inserted Successfully");
+                    string query = "Insert into Student (FirstName, LastName, Contact, Email, RegistrationNumber, Status) values('" + text_fname.Text + "', '" + text_lname.Text + "', '" + text_cnumber.Text + "', '" + text_email.Text + "', '" + text_rnumber.Text + "', '" + LookupId + "')";
+                    command = new SqlCommand(query, conn);
+                    int i = command.ExecuteNonQuery();
+                    if (i != 0)
+                    {
+                        MessageBox.Show("Student Record Inserted Successfully");
+                    }
+                    conn.Close();
                 }
-                conn.Close();
+                else
+                {
+                    string query = "Update Student SET FirstName = '" + text_fname.Text + "', LastName = '" + text_lname.Text + "', Contact = '" + text_cnumber.Text + "', Email = '" + text_email.Text + "', RegistrationNumber = '" + text_rnumber.Text + "', Status = '" + LookupId + "' where Id = '" + Id + "'";
+                    command = new SqlCommand(query, conn);
+                    int i = command.ExecuteNonQuery();
+                    if (i != 0)
+                    {
+                        MessageBox.Show("Student Record Updated Successfully");
+                    }
+                    conn.Close();
+                }
+                foreach (Form f in Application.OpenForms)
+                    f.Hide();
+
+                Form_Students s = new Form_Students();
+                s.Show();
             }
             else
             {
-                string query = "Update Student SET FirstName = '"+text_fname.Text+"', LastName = '"+text_lname.Text+"', Contact = '"+text_cnumber.Text+"', Email = '"+text_email.Text+ "', RegistrationNumber = '"+text_rnumber.Text+"', Status = '"+LookupId+"' where Id = '"+Id+"'";
-                command = new SqlCommand(query, conn);
-                int i = command.ExecuteNonQuery();
-                if (i != 0)
-                {
-                    MessageBox.Show("Student Record Updated Successfully");
-                }
-                conn.Close();
+                error_msg.Show();
             }
-            foreach (Form f in Application.OpenForms)
-                f.Hide();
+        }
 
-            Form_Students s = new Form_Students();
-            s.Show();
+        private void Form_AddNewStudent_Load(object sender, EventArgs e)
+        {
+            error_msg.Hide();
+        }
+
+        private void text_fname_TextChanged(object sender, EventArgs e)
+        {
+            error_msg.Hide();
+        }
+
+        private void text_lname_TextChanged(object sender, EventArgs e)
+        {
+            error_msg.Hide();
+        }
+
+        private void text_cnumber_TextChanged(object sender, EventArgs e)
+        {
+            error_msg.Hide();
+        }
+
+        private void text_email_TextChanged(object sender, EventArgs e)
+        {
+            error_msg.Hide();
+        }
+
+        private void text_rnumber_TextChanged(object sender, EventArgs e)
+        {
+            error_msg.Hide();
+        }
+
+        private void combo_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            error_msg.Hide();
         }
     }
 }

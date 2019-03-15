@@ -32,36 +32,58 @@ namespace MiniProject
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
-            conn.Open();
-
-            if (add_button.Text == "Add Level")
+            if(text_details.Text != "" && text_level.Text != "")
             {
-                string query = "Insert into RubricLevel (RubricId, Details, MeasurementLevel) values('"+RubricId+"','" + text_details.Text + "', '" + text_level.Text + "')";
-                SqlCommand command = new SqlCommand(query, conn);
-                int i = command.ExecuteNonQuery();
-                if (i != 0)
+                SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
+                conn.Open();
+
+                if (add_button.Text == "Add Level")
                 {
-                    MessageBox.Show("Level Record Inserted Successfully");
+                    string query = "Insert into RubricLevel (RubricId, Details, MeasurementLevel) values('" + RubricId + "','" + text_details.Text + "', '" + text_level.Text + "')";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    int i = command.ExecuteNonQuery();
+                    if (i != 0)
+                    {
+                        MessageBox.Show("Level Record Inserted Successfully");
+                    }
+                    conn.Close();
                 }
-                conn.Close();
+                else
+                {
+                    string query = "Update RubricLevel SET Details = '" + text_details.Text + "',MeasurementLevel = '" + text_level.Text + "'  where Id = '" + Id + "'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    int i = command.ExecuteNonQuery();
+                    if (i != 0)
+                    {
+                        MessageBox.Show("Level Record Updated Successfully");
+                    }
+                    conn.Close();
+                }
+                foreach (Form f in Application.OpenForms)
+                    f.Hide();
+
+                Form_Levels s = new Form_Levels(RubricId);
+                s.Show();
             }
             else
             {
-                string query = "Update RubricLevel SET Details = '" + text_details.Text + "',MeasurementLevel = '"+text_level.Text+"'  where Id = '" + Id + "'";
-                SqlCommand command = new SqlCommand(query, conn);
-                int i = command.ExecuteNonQuery();
-                if (i != 0)
-                {
-                    MessageBox.Show("Level Record Updated Successfully");
-                }
-                conn.Close();
+                error_msg.Show();
             }
-            foreach (Form f in Application.OpenForms)
-                f.Hide();
+        }
 
-            Form_Levels s = new Form_Levels(RubricId);
-            s.Show();
+        private void Form_AddLevel_Load(object sender, EventArgs e)
+        {
+            error_msg.Hide();
+        }
+
+        private void text_details_TextChanged(object sender, EventArgs e)
+        {
+            error_msg.Hide();
+        }
+
+        private void text_level_TextChanged(object sender, EventArgs e)
+        {
+            error_msg.Hide();
         }
     }
 }

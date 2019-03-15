@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.text_details = new System.Windows.Forms.TextBox();
             this.add_button = new System.Windows.Forms.Button();
+            this.error_msg = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -90,9 +91,9 @@
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
+            this.label1.Size = new System.Drawing.Size(64, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Details";
+            this.label1.Text = "Details*";
             // 
             // text_details
             // 
@@ -105,6 +106,7 @@
             this.text_details.Name = "text_details";
             this.text_details.Size = new System.Drawing.Size(345, 26);
             this.text_details.TabIndex = 4;
+            this.text_details.TextChanged += new System.EventHandler(this.text_details_TextChanged);
             // 
             // add_button
             // 
@@ -119,22 +121,36 @@
             this.add_button.UseVisualStyleBackColor = true;
             this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
+            // error_msg
+            // 
+            this.error_msg.AutoSize = true;
+            this.error_msg.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error_msg.ForeColor = System.Drawing.Color.Red;
+            this.error_msg.Location = new System.Drawing.Point(46, 189);
+            this.error_msg.Name = "error_msg";
+            this.error_msg.Size = new System.Drawing.Size(278, 22);
+            this.error_msg.TabIndex = 6;
+            this.error_msg.Text = "Please Fill In All The Required Fields";
+            // 
             // Form_AddRubric
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(375, 261);
+            this.Controls.Add(this.error_msg);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "Form_AddRubric";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Rubric";
+            this.Load += new System.EventHandler(this.Form_AddRubric_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -146,5 +162,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox text_details;
         private System.Windows.Forms.Button add_button;
+        private System.Windows.Forms.Label error_msg;
     }
 }

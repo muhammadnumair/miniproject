@@ -1,6 +1,6 @@
 ﻿namespace MiniProject
 {
-    partial class Form_Levels
+    partial class Form_Assessment
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView_Level = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Assessment = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,7 +44,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Assessment)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -58,7 +58,7 @@
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(164, 34);
             this.add_button.TabIndex = 1;
-            this.add_button.Text = "Add New Level";
+            this.add_button.Text = "Add New Assessment";
             this.add_button.UseVisualStyleBackColor = true;
             this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
@@ -67,7 +67,7 @@
             this.form_heading.AutoSize = true;
             this.form_heading.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_heading.ForeColor = System.Drawing.Color.White;
-            this.form_heading.Location = new System.Drawing.Point(17, 8);
+            this.form_heading.Location = new System.Drawing.Point(14, 8);
             this.form_heading.Name = "form_heading";
             this.form_heading.Size = new System.Drawing.Size(66, 35);
             this.form_heading.TabIndex = 3;
@@ -89,13 +89,13 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 18.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(31, 3);
+            this.label6.Location = new System.Drawing.Point(10, 4);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 35);
+            this.label6.Size = new System.Drawing.Size(261, 32);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Rubric Level";
+            this.label6.Text = "Add New Assessment";
             // 
             // tableLayoutPanel3
             // 
@@ -104,41 +104,41 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.dataGridView_Level, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(13, 158);
+            this.tableLayoutPanel3.Controls.Add(this.dataGridView_Assessment, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(14, 157);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(670, 291);
-            this.tableLayoutPanel3.TabIndex = 16;
+            this.tableLayoutPanel3.TabIndex = 12;
             // 
-            // dataGridView_Level
+            // dataGridView_Assessment
             // 
-            this.dataGridView_Level.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView_Assessment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_Level.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Level.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView_Level.Name = "dataGridView_Level";
-            this.dataGridView_Level.Size = new System.Drawing.Size(664, 285);
-            this.dataGridView_Level.TabIndex = 0;
-            this.dataGridView_Level.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Level_CellContentClick);
+            this.dataGridView_Assessment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Assessment.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_Assessment.Name = "dataGridView_Assessment";
+            this.dataGridView_Assessment.Size = new System.Drawing.Size(664, 285);
+            this.dataGridView_Assessment.TabIndex = 0;
+            this.dataGridView_Assessment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Assessment_CellContentClick);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.67164F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.32836F));
-            this.tableLayoutPanel2.Controls.Add(this.add_button, 1, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.9403F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.0597F));
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 111);
+            this.tableLayoutPanel2.Controls.Add(this.add_button, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(14, 110);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(670, 41);
-            this.tableLayoutPanel2.TabIndex = 15;
+            this.tableLayoutPanel2.TabIndex = 11;
             // 
             // tableLayoutPanel1
             // 
@@ -148,12 +148,12 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-2, -1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, -2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(704, 58);
-            this.tableLayoutPanel1.TabIndex = 14;
+            this.tableLayoutPanel1.TabIndex = 10;
             // 
             // tableLayoutPanel4
             // 
@@ -176,7 +176,7 @@
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(694, 45);
-            this.tableLayoutPanel4.TabIndex = 17;
+            this.tableLayoutPanel4.TabIndex = 14;
             // 
             // button1
             // 
@@ -194,7 +194,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "CLO\'s";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_students
             // 
@@ -230,7 +230,6 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "Assessment";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -272,7 +271,7 @@
             this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // Form_Levels
+            // Form_Assessment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -282,14 +281,14 @@
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form_Levels";
+            this.Name = "Form_Assessment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Rubrics Levels";
-            this.Load += new System.EventHandler(this.Form_Levels_Load);
+            this.Text = "Form_Assessment";
+            this.Load += new System.EventHandler(this.Form_Assessment_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Assessment)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -305,7 +304,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridView dataGridView_Level;
+        private System.Windows.Forms.DataGridView dataGridView_Assessment;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;

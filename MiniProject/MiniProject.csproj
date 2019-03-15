@@ -46,6 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboboxItem.cs" />
+    <Compile Include="Form_AddAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AddAssessment.Designer.cs">
+      <DependentUpon>Form_AddAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AddAssessmentComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AddAssessmentComponent.Designer.cs">
+      <DependentUpon>Form_AddAssessmentComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_AddCLO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +77,30 @@
     <Compile Include="Form_AddRubric.Designer.cs">
       <DependentUpon>Form_AddRubric.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Assessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Assessment.Designer.cs">
+      <DependentUpon>Form_Assessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AssessmentComponents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AssessmentComponents.Designer.cs">
+      <DependentUpon>Form_AssessmentComponents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Attendence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Attendence.Designer.cs">
+      <DependentUpon>Form_Attendence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MarkAttendence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MarkAttendence.Designer.cs">
+      <DependentUpon>Form_MarkAttendence.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_CLO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +112,12 @@
     </Compile>
     <Compile Include="Form_Levels.Designer.cs">
       <DependentUpon>Form_Levels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Result.Designer.cs">
+      <DependentUpon>Form_Result.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Rubrics.cs">
       <SubType>Form</SubType>
@@ -101,6 +144,12 @@
       <DependentUpon>ProjectBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_AddAssessment.resx">
+      <DependentUpon>Form_AddAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AddAssessmentComponent.resx">
+      <DependentUpon>Form_AddAssessmentComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_AddCLO.resx">
       <DependentUpon>Form_AddCLO.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +158,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AddRubric.resx">
       <DependentUpon>Form_AddRubric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Assessment.resx">
+      <DependentUpon>Form_Assessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AssessmentComponents.resx">
+      <DependentUpon>Form_AssessmentComponents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MarkAttendence.resx">
+      <DependentUpon>Form_MarkAttendence.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_CLO.resx">
       <DependentUpon>Form_CLO.cs</DependentUpon>

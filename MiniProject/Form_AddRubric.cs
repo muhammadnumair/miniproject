@@ -31,39 +31,53 @@ namespace MiniProject
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
-            conn.Open();
-
-            if (add_button.Text == "Add Rubric")
+            if(text_details.Text != "")
             {
-                MessageBox.Show("Yahan Click Hoa");
-                string query = "Insert into Rubric (Details, CloId) values('" + text_details.Text + "', '" + CloId + "')";
-                SqlCommand command = new SqlCommand(query, conn);
-                int i = command.ExecuteNonQuery();
-                if (i != 0)
+                SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
+                conn.Open();
+
+                if (add_button.Text == "Add Rubric")
                 {
-                    MessageBox.Show("Rubric Record Inserted Successfully");
+                    string query = "Insert into Rubric (Details, CloId) values('" + text_details.Text + "', '" + CloId + "')";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    int i = command.ExecuteNonQuery();
+                    if (i != 0)
+                    {
+                        MessageBox.Show("Rubric Record Inserted Successfully");
+                    }
+                    conn.Close();
                 }
-                conn.Close();
+                else
+                {
+                    string query = "Update Rubric SET Details = '" + text_details.Text + "' where Id = '" + Id + "'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    int i = command.ExecuteNonQuery();
+                    if (i != 0)
+                    {
+                        MessageBox.Show("Rubric Record Updated Successfully");
+                    }
+                    conn.Close();
+                }
+                foreach (Form f in Application.OpenForms)
+                    f.Hide();
+
+                Form_Rubrics s = new Form_Rubrics(CloId);
+                s.Show();
             }
             else
             {
-                string query = "Update Rubric SET Details = '" + text_details.Text + "' where Id = '" + Id + "'";
-                MessageBox.Show(query);
-                SqlCommand command = new SqlCommand(query, conn);
-                int i = command.ExecuteNonQuery();
-                if (i != 0)
-                {
-                    MessageBox.Show("Rubric Record Updated Successfully");
-                }
-                conn.Close();
+                error_msg.Show();
             }
-            MessageBox.Show(CloId.ToString());
-            foreach (Form f in Application.OpenForms)
-                f.Hide();
+        }
 
-            Form_Rubrics s = new Form_Rubrics(CloId);
-            s.Show();
+        private void text_details_TextChanged(object sender, EventArgs e)
+        {
+            error_msg.Hide();
+        }
+
+        private void Form_AddRubric_Load(object sender, EventArgs e)
+        {
+            error_msg.Hide();
         }
     }
 }
