@@ -128,11 +128,25 @@ namespace MiniProject
                             values[1] = oReader["Name"].ToString();
                             values[2] = oReader["TotalMarks"].ToString();
                             values[3] = oReader["AssessmentId"].ToString();
+                            values[4] = oReader["RubricId"].ToString();
                             break;
                         }
 
                         conn.Close();
                     }
+                }
+                string ooString = "Select * from Rubric where Id='" + values[4] + "'";
+                SqlCommand ooCmd = new SqlCommand(ooString, conn);
+                conn.Open();
+                using (SqlDataReader oReader = ooCmd.ExecuteReader())
+                {
+                    while (oReader.Read())
+                    {
+                        values[5] = oReader["CloId"].ToString();
+                        break;
+                    }
+
+                    conn.Close();
                 }
                 Form_AddAssessmentComponent s = new Form_AddAssessmentComponent(values);
                 s.Show();
@@ -162,7 +176,7 @@ namespace MiniProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form_Attendence f = new Form_Attendence();
+            Form_MarkAttendence f = new Form_MarkAttendence();
             f.Show();
             this.Hide();
         }

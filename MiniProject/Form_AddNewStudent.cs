@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+
 namespace MiniProject
 {
     public partial class Form_AddNewStudent : Form
@@ -39,7 +41,8 @@ namespace MiniProject
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            if(text_email.Text != "" && text_fname.Text != "" && text_lname.Text != "" && text_cnumber.Text != "" && text_rnumber.Text != "" && combo_status.Text != "" && combo_status.Text != "Select Status")
+            Regex reg = new Regex(@"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+            if (text_email.Text != "" && text_fname.Text != "" && text_lname.Text != "" && text_cnumber.Text != "" && text_rnumber.Text != "" && combo_status.Text != "" && combo_status.Text != "Select Status" && reg.IsMatch(text_email.Text) && text_cnumber.Text.All(c => char.IsDigit(c)))
             {
                 SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
                 conn.Open();
@@ -86,6 +89,17 @@ namespace MiniProject
             }
             else
             {
+                if (!text_cnumber.Text.All(c => char.IsDigit(c) && text_cnumber.Text != ""))
+                {
+                    error_msg.Text = "Contact Number Must Be Digits";
+                }
+                else if (!reg.IsMatch(text_email.Text) && text_email.Text != "") {
+                    error_msg.Text = "Email is not in correct format";
+                }
+                else
+                {
+                    error_msg.Text = "Please Fill In All The Required Fields";
+                }
                 error_msg.Show();
             }
         }

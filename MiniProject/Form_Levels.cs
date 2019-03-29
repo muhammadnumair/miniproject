@@ -97,15 +97,21 @@ namespace MiniProject
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0 && e.ColumnIndex == 4)
             {
-                int row_index = e.RowIndex;
-                DataGridViewRow selectedRow = dataGridView_Level.Rows[row_index];
-                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                conn.Open();
-                string query = "DELETE FROM RubricLevel WHERE Id = '" + a + "'";
-                SqlCommand command = new SqlCommand(query, conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-                loadDataGridView();
+                var confirmResult = MessageBox.Show("Are you sure to delete this item??",
+                                     "Confirm Delete!!",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    int row_index = e.RowIndex;
+                    DataGridViewRow selectedRow = dataGridView_Level.Rows[row_index];
+                    string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                    conn.Open();
+                    string query = "DELETE FROM RubricLevel WHERE Id = '" + a + "'";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    loadDataGridView();
+                }
             }
             else if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0 && e.ColumnIndex == 3)
@@ -136,7 +142,6 @@ namespace MiniProject
                 }
                 Form_AddLevel s = new Form_AddLevel(values);
                 s.Show();
-                this.Hide();
             }
         }
 
@@ -161,7 +166,7 @@ namespace MiniProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form_Attendence f = new Form_Attendence();
+            Form_MarkAttendence f = new Form_MarkAttendence();
             f.Show();
             this.Hide();
         }

@@ -14,6 +14,8 @@ namespace MiniProject
     {
         int RubricId;
         int Id;
+        string RubricName;
+        string CloId;
         public Form_AddLevel(int id)
         {
             RubricId = id;
@@ -28,11 +30,47 @@ namespace MiniProject
             text_level.Text = values[2];
             RubricId = Convert.ToInt32(values[3]);
             add_button.Text = "Update Record";
+            combo_rubrics.Enabled = true;
+            SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
+            conn.Open();
+            string query2 = "Select * from Rubric where Id = '"+RubricId+"'";
+            SqlCommand command2 = new SqlCommand(query2, conn);
+            using (SqlDataReader reader = command2.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    CloId = Convert.ToString(reader["CloId"]);
+                    break;
+                }
+            }
+
+            string query1 = "Select * from Rubric where CloId = '"+CloId+"'";
+            SqlCommand command = new SqlCommand(query1, conn);
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = Convert.ToString(reader["Details"]);
+                    item.Value = Convert.ToString(reader["Id"]);
+                    if (Convert.ToString(RubricId) == Convert.ToString(reader["Id"]))
+                    {
+                        RubricName = Convert.ToString(reader["Details"]);
+                    }
+                    combo_rubrics.Items.Add(item);
+
+                    //combo_clo.SelectedIndex = 0;
+                }
+            }
+            if (RubricName != null)
+            {
+                combo_rubrics.SelectedIndex = combo_rubrics.FindStringExact(RubricName);
+            }
         }
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            if(text_details.Text != "" && text_level.Text != "")
+            if(text_details.Text != "" && text_level.Text != "" && text_level.Text.All(c => char.IsDigit(c)))
             {
                 SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
                 conn.Open();
@@ -50,7 +88,7 @@ namespace MiniProject
                 }
                 else
                 {
-                    string query = "Update RubricLevel SET Details = '" + text_details.Text + "',MeasurementLevel = '" + text_level.Text + "'  where Id = '" + Id + "'";
+                    string query = "Update RubricLevel SET Details = '" + text_details.Text + "',MeasurementLevel = '" + text_level.Text + "', RubricId = '"+ (combo_rubrics.SelectedItem as ComboboxItem).Value.ToString() + "'  where Id = '" + Id + "'";
                     SqlCommand command = new SqlCommand(query, conn);
                     int i = command.ExecuteNonQuery();
                     if (i != 0)
@@ -67,6 +105,14 @@ namespace MiniProject
             }
             else
             {
+                if(!text_level.Text.All(c => char.IsDigit(c)))
+                {
+                    error_msg.Text = "Level Must Be Numeric Value";
+                }
+                else
+                {
+                    error_msg.Text = "Please fill in all required fields";
+                }
                 error_msg.Show();
             }
         }

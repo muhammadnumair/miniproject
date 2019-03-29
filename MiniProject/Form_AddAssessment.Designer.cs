@@ -201,7 +201,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "Form_AddAssessment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_AddAssessment";
+            this.Text = "Add New Assessment";
             this.Load += new System.EventHandler(this.Form_AddAssessment_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

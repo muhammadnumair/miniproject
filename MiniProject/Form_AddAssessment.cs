@@ -29,7 +29,7 @@ namespace MiniProject
         }
         private void add_button_Click(object sender, EventArgs e)
         {
-            if (text_marks.Text != "" && text_title.Text != "" && text_weightage.Text != "")
+            if (text_marks.Text != "" && text_title.Text != "" && text_weightage.Text != "" && text_marks.Text.All(c => char.IsDigit(c)) && text_weightage.Text.All(c => char.IsDigit(c)))
             {
                 SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
                 conn.Open();
@@ -64,6 +64,17 @@ namespace MiniProject
             }
             else
             {
+                if(!text_marks.Text.All(c => char.IsDigit(c)))
+                {
+                    error_msg.Text = "Marks must be a numeric value";
+                }else if(!text_weightage.Text.All(c => char.IsDigit(c)))
+                {
+                    error_msg.Text = "Weightage must be a numeric value";
+                }
+                else
+                {
+                    error_msg.Text = "Please fill in all the required fields";
+                }
                 error_msg.Show();
             }
         }

@@ -200,7 +200,7 @@ namespace MiniProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form_Attendence f = new Form_Attendence();
+            Form_MarkAttendence f = new Form_MarkAttendence();
             f.Show();
             this.Hide();
         }

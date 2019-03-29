@@ -14,6 +14,10 @@ namespace MiniProject
     {
         int AssessmentId;
         int Id;
+        string RubricId;
+        string CloId;
+        string CloName;
+        string RubricName;
         public Form_AddAssessmentComponent(int id)
         {
             AssessmentId = id;
@@ -26,6 +30,8 @@ namespace MiniProject
             text_name.Text = values[1];
             text_marks.Text = values[2];
             AssessmentId = Convert.ToInt32(values[3]);
+            RubricId = Convert.ToString(values[4]);
+            CloId = Convert.ToString(values[5]);
             add_button.Text = "Update Record";
         }
 
@@ -42,12 +48,22 @@ namespace MiniProject
                 {
                     ComboboxItem item = new ComboboxItem();
                     item.Text = Convert.ToString(reader["Name"]);
-                    item.Value = Convert.ToString(reader["Id"]); ;
-
+                    item.Value = Convert.ToString(reader["Id"]);
+                    if(CloId != null)
+                    {
+                        if(CloId == Convert.ToString(reader["Id"]))
+                        {
+                            CloName = Convert.ToString(reader["Name"]);
+                        }
+                    }
                     combo_clo.Items.Add(item);
 
                     //combo_clo.SelectedIndex = 0;
                 }
+            }
+            if (CloId != null)
+            {
+                combo_clo.SelectedIndex = combo_clo.FindStringExact(CloName);
             }
         }
 
@@ -67,17 +83,28 @@ namespace MiniProject
                     ComboboxItem item = new ComboboxItem();
                     item.Text = Convert.ToString(reader["Details"]);
                     item.Value = Convert.ToString(reader["Id"]); ;
-
+                    if (RubricId != null)
+                    {
+                        if (RubricId == Convert.ToString(reader["Id"]))
+                        {
+                            RubricName = Convert.ToString(reader["Details"]);
+                        }
+                    }
                     comboc_rubric.Items.Add(item);
 
                     //combo_clo.SelectedIndex = 0;
                 }
             }
+
+            if(RubricId != null)
+            {
+                comboc_rubric.SelectedIndex = comboc_rubric.FindStringExact(RubricName);
+            }
         }
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            if(text_marks.Text != "" && text_name.Text != "" && combo_clo.Text != "" && comboc_rubric.Text != "")
+            if(text_marks.Text != "" && text_name.Text != "" && combo_clo.Text != "" && comboc_rubric.Text != "" && text_marks.Text.All(c => char.IsDigit(c)))
             {
                 SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
                 conn.Open();
@@ -95,7 +122,7 @@ namespace MiniProject
                 }
                 else
                 {
-                    string query = "Update Assessment SET Name = '" + text_name.Text + "', TotalMarks = '" + text_marks.Text + "', RubricId = '" + (comboc_rubric.SelectedItem as ComboboxItem).Value.ToString() + "' where Id = '" + Id + "'";
+                    string query = "Update AssessmentComponent SET Name = '" + text_name.Text + "', TotalMarks = '" + text_marks.Text + "', RubricId = '" + (comboc_rubric.SelectedItem as ComboboxItem).Value.ToString() + "' where Id = '" + Id + "'";
                     command = new SqlCommand(query, conn);
                     int i = command.ExecuteNonQuery();
                     if (i != 0)
@@ -112,6 +139,14 @@ namespace MiniProject
             }
             else
             {
+                if (!text_marks.Text.All(c => char.IsDigit(c)))
+                {
+                    error_msg.Text = "Marks must be a numeric value";
+                }
+                else
+                {
+                    error_msg.Text = "Please fill in all the required fields";
+                }
                 error_msg.Show();
             }
         }

@@ -14,6 +14,7 @@ namespace MiniProject
     {
         int CloId;
         int Id;
+        string CloName;
         public Form_AddRubric(int id)
         {
             CloId = id;
@@ -27,6 +28,31 @@ namespace MiniProject
             text_details.Text = values[1];
             CloId = Convert.ToInt32(values[2]);
             add_button.Text = "Update Record";
+            combo_clo.Enabled = true;
+            SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
+            conn.Open();
+            string query1 = "Select * from Clo";
+            SqlCommand command = new SqlCommand(query1, conn);
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = Convert.ToString(reader["Name"]);
+                    item.Value = Convert.ToString(reader["Id"]);
+                    if(Convert.ToString(CloId) == Convert.ToString(reader["Id"]))
+                    {
+                        CloName = Convert.ToString(reader["Name"]);
+                    }
+                    combo_clo.Items.Add(item);
+
+                    //combo_clo.SelectedIndex = 0;
+                }
+            }
+            if(CloName != null)
+            {
+                combo_clo.SelectedIndex = combo_clo.FindStringExact(CloName);
+            }
         }
 
         private void add_button_Click(object sender, EventArgs e)
@@ -49,7 +75,7 @@ namespace MiniProject
                 }
                 else
                 {
-                    string query = "Update Rubric SET Details = '" + text_details.Text + "' where Id = '" + Id + "'";
+                    string query = "Update Rubric SET Details = '" + text_details.Text + "', CloId = '"+ (combo_clo.SelectedItem as ComboboxItem).Value.ToString()  + "' where Id = '" + Id + "'";
                     SqlCommand command = new SqlCommand(query, conn);
                     int i = command.ExecuteNonQuery();
                     if (i != 0)

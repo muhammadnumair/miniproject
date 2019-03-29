@@ -143,7 +143,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "Form_AddCLO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "add_clo";
+            this.Text = "Add New CLO";
             this.Load += new System.EventHandler(this.Form_AddCLO_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
