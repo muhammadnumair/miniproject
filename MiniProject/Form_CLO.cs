@@ -115,41 +115,48 @@ namespace MiniProject
                                      MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    int row_index = e.RowIndex;
-                    DataGridViewRow selectedRow = dataGridView_CLO.Rows[row_index];
-                    string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                    SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
-                    conn.Open();
-                    string query1 = "Select * from Rubric where CloId='" + a + "'";
-                    SqlCommand cmd = new SqlCommand(query1, conn);
-                    ArrayList al = new ArrayList();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    try
                     {
-                        string Id = 0.ToString();
-                        while (reader.Read())
+                        int row_index = e.RowIndex;
+                        DataGridViewRow selectedRow = dataGridView_CLO.Rows[row_index];
+                        string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                        SqlConnection conn = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True");
+                        conn.Open();
+                        string query1 = "Select * from Rubric where CloId='" + a + "'";
+                        SqlCommand cmd = new SqlCommand(query1, conn);
+                        ArrayList al = new ArrayList();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            MessageBox.Show(Convert.ToString(reader["Id"]));
-                            //Id = reader["Id"].ToString();
-                            al.Add(Convert.ToString(reader["Id"]));
+                            string Id = 0.ToString();
+                            while (reader.Read())
+                            {
+                                //MessageBox.Show(Convert.ToString(reader["Id"]));
+                                //Id = reader["Id"].ToString();
+                                al.Add(Convert.ToString(reader["Id"]));
+                            }
                         }
-                    }
 
-                    foreach (string i in al)
+                        foreach (string i in al)
+                        {
+                            string query4 = "DELETE FROM RubricLevel WHERE RubricId = '" + i + "'";
+                            SqlCommand command1 = new SqlCommand(query4, conn);
+                            command1.ExecuteNonQuery();
+                        }
+
+                        string query2 = "DELETE FROM Rubric WHERE CloId = '" + a + "'";
+                        SqlCommand command2 = new SqlCommand(query2, conn);
+                        command2.ExecuteNonQuery();
+
+                        string query = "DELETE FROM Clo WHERE Id = '" + a + "'";
+                        SqlCommand command = new SqlCommand(query, conn);
+                        command.ExecuteNonQuery();
+                        conn.Close();
+                        loadDataGridView();
+                    }
+                    catch(Exception a)
                     {
-                        string query4 = "DELETE FROM RubricLevel WHERE RubricId = '" + i + "'";
-                        SqlCommand command1 = new SqlCommand(query4, conn);
-                        command1.ExecuteNonQuery();
+                        MessageBox.Show("The sub components have values assignment to Assignments and Evaluation, Delete Them First");
                     }
-
-                    string query2 = "DELETE FROM Rubric WHERE CloId = '" + a + "'";
-                    SqlCommand command2 = new SqlCommand(query2, conn);
-                    command2.ExecuteNonQuery();
-
-                    string query = "DELETE FROM Clo WHERE Id = '" + a + "'";
-                    SqlCommand command = new SqlCommand(query, conn);
-                    command.ExecuteNonQuery();
-                    conn.Close();
-                    loadDataGridView();
                 }
             }
             else if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&

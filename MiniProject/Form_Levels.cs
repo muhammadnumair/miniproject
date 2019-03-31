@@ -102,15 +102,22 @@ namespace MiniProject
                                      MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    int row_index = e.RowIndex;
-                    DataGridViewRow selectedRow = dataGridView_Level.Rows[row_index];
-                    string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                    conn.Open();
-                    string query = "DELETE FROM RubricLevel WHERE Id = '" + a + "'";
-                    SqlCommand command = new SqlCommand(query, conn);
-                    command.ExecuteNonQuery();
-                    conn.Close();
-                    loadDataGridView();
+                    try
+                    {
+                        int row_index = e.RowIndex;
+                        DataGridViewRow selectedRow = dataGridView_Level.Rows[row_index];
+                        string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                        conn.Open();
+                        string query = "DELETE FROM RubricLevel WHERE Id = '" + a + "'";
+                        SqlCommand command = new SqlCommand(query, conn);
+                        command.ExecuteNonQuery();
+                        conn.Close();
+                        loadDataGridView();
+                    }
+                    catch(Exception aa)
+                    {
+                        MessageBox.Show("This Level Is Assigned To An Evaluation, Delete It First");
+                    }
                 }
             }
             else if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&

@@ -101,18 +101,25 @@ namespace MiniProject
                                      MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    int row_index = e.RowIndex;
-                    DataGridViewRow selectedRow = dataGridView_Rubric.Rows[row_index];
-                    string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                    conn.Open();
-                    string query1 = "DELETE FROM RubricLevel WHERE RubricId = '" + a + "'";
-                    SqlCommand command1 = new SqlCommand(query1, conn);
-                    command1.ExecuteNonQuery();
-                    string query = "DELETE FROM Rubric WHERE Id = '" + a + "'";
-                    SqlCommand command = new SqlCommand(query, conn);
-                    command.ExecuteNonQuery();
-                    conn.Close();
-                    loadDataGridView();
+                    try
+                    {
+                        int row_index = e.RowIndex;
+                        DataGridViewRow selectedRow = dataGridView_Rubric.Rows[row_index];
+                        string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                        conn.Open();
+                        string query1 = "DELETE FROM RubricLevel WHERE RubricId = '" + a + "'";
+                        SqlCommand command1 = new SqlCommand(query1, conn);
+                        command1.ExecuteNonQuery();
+                        string query = "DELETE FROM Rubric WHERE Id = '" + a + "'";
+                        SqlCommand command = new SqlCommand(query, conn);
+                        command.ExecuteNonQuery();
+                        conn.Close();
+                        loadDataGridView();
+                    }
+                    catch(Exception a)
+                    {
+                        MessageBox.Show("There Are Assessments Againts This Rubric You Have To Delete First");
+                    }
                 }
                 else
                 {
