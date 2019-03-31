@@ -188,6 +188,8 @@
             // 
             // dataGridView_Result
             // 
+            this.dataGridView_Result.AllowUserToAddRows = false;
+            this.dataGridView_Result.AllowUserToDeleteRows = false;
             this.dataGridView_Result.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -201,6 +203,7 @@
             this.TotalMarks});
             this.dataGridView_Result.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_Result.Name = "dataGridView_Result";
+            this.dataGridView_Result.ReadOnly = true;
             this.dataGridView_Result.Size = new System.Drawing.Size(674, 298);
             this.dataGridView_Result.TabIndex = 0;
             // 
@@ -208,31 +211,37 @@
             // 
             this.Name.HeaderText = "Name";
             this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
             // 
             // Contact
             // 
             this.Contact.HeaderText = "Contact";
             this.Contact.Name = "Contact";
+            this.Contact.ReadOnly = true;
             // 
             // Email
             // 
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // AssessmentName
             // 
             this.AssessmentName.HeaderText = "AssessmentName";
             this.AssessmentName.Name = "AssessmentName";
+            this.AssessmentName.ReadOnly = true;
             // 
             // ObtainedMarks
             // 
             this.ObtainedMarks.HeaderText = "ObtainedMarks";
             this.ObtainedMarks.Name = "ObtainedMarks";
+            this.ObtainedMarks.ReadOnly = true;
             // 
             // TotalMarks
             // 
             this.TotalMarks.HeaderText = "TotalMarks";
             this.TotalMarks.Name = "TotalMarks";
+            this.TotalMarks.ReadOnly = true;
             // 
             // tableLayoutPanel2
             // 

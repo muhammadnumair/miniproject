@@ -31,6 +31,7 @@
             this.add_button = new System.Windows.Forms.Button();
             this.form_heading = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_Rubric = new System.Windows.Forms.DataGridView();
@@ -42,7 +43,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Rubric)).BeginInit();
@@ -87,6 +87,24 @@
             this.panel1.Size = new System.Drawing.Size(698, 52);
             this.panel1.TabIndex = 5;
             // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.SlateGray;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(545, 9);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(134, 34);
+            this.button5.TabIndex = 21;
+            this.button5.Text = "Generate Report";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -117,12 +135,15 @@
             // 
             // dataGridView_Rubric
             // 
+            this.dataGridView_Rubric.AllowUserToAddRows = false;
+            this.dataGridView_Rubric.AllowUserToDeleteRows = false;
             this.dataGridView_Rubric.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Rubric.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Rubric.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_Rubric.Name = "dataGridView_Rubric";
+            this.dataGridView_Rubric.ReadOnly = true;
             this.dataGridView_Rubric.Size = new System.Drawing.Size(664, 265);
             this.dataGridView_Rubric.TabIndex = 0;
             this.dataGridView_Rubric.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CLO_CellContentClick);
@@ -271,24 +292,6 @@
             this.button4.Text = "Result";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.SlateGray;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(545, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(134, 34);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Generate Report";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form_Rubrics
             // 

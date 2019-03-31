@@ -122,7 +122,7 @@ namespace MiniProject
                 }
                 else
                 {
-                    string query = "Update AssessmentComponent SET Name = '" + text_name.Text + "', TotalMarks = '" + text_marks.Text + "', RubricId = '" + (comboc_rubric.SelectedItem as ComboboxItem).Value.ToString() + "' where Id = '" + Id + "'";
+                    string query = "Update AssessmentComponent SET Name = '" + text_name.Text + "', TotalMarks = '" + text_marks.Text + "', RubricId = '" + (comboc_rubric.SelectedItem as ComboboxItem).Value.ToString() + "', DateUpdated = '"+DateTime.Now+"' where Id = '" + Id + "'";
                     command = new SqlCommand(query, conn);
                     int i = command.ExecuteNonQuery();
                     if (i != 0)

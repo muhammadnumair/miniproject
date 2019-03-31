@@ -185,14 +185,19 @@ namespace MiniProject
                 SqlCommand command;
                 if (add_button.Text == "Add Result")
                 {
-                    string query = "Insert into StudentResult (StudentId, AssessmentComponentId, RubricMeasurementId, EvaluationDate) values('"+(combo_student.SelectedItem as ComboboxItem).Value.ToString() + "', '" + (comboc_assessment_component.SelectedItem as ComboboxItem).Value.ToString() + "', '" + (combo_mesure_level.SelectedItem as ComboboxItem).Value.ToString() + "', '" + DateTime.Now + "')";
-                    command = new SqlCommand(query, conn);
-                    int i = command.ExecuteNonQuery();
-                    if (i != 0)
+                    try
                     {
-                        MessageBox.Show("Result Inserted Successfully");
+                        string query = "Insert into StudentResult (StudentId, AssessmentComponentId, RubricMeasurementId, EvaluationDate) values('" + (combo_student.SelectedItem as ComboboxItem).Value.ToString() + "', '" + (comboc_assessment_component.SelectedItem as ComboboxItem).Value.ToString() + "', '" + (combo_mesure_level.SelectedItem as ComboboxItem).Value.ToString() + "', '" + DateTime.Now + "')";
+                        command = new SqlCommand(query, conn);
+                        int i = command.ExecuteNonQuery();
+                        if (i != 0)
+                        {
+                            MessageBox.Show("Result Inserted Successfully");
+                        }
+                        conn.Close();
+                    }catch(Exception a){
+                        MessageBox.Show("Student Marks Already Evaluated");
                     }
-                    conn.Close();
                 }
                 else
                 {

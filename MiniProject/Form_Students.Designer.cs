@@ -43,18 +43,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.btn_search = new System.Windows.Forms.Button();
-            this.filter_by_status = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.text_search = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Students)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // add_button
@@ -174,12 +168,14 @@
             // 
             // dataGridView_Students
             // 
+            this.dataGridView_Students.AllowUserToAddRows = false;
             this.dataGridView_Students.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Students.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Students.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_Students.Name = "dataGridView_Students";
+            this.dataGridView_Students.ReadOnly = true;
             this.dataGridView_Students.Size = new System.Drawing.Size(674, 298);
             this.dataGridView_Students.TabIndex = 0;
             this.dataGridView_Students.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Students_CellContentClick);
@@ -204,7 +200,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(700, 45);
             this.tableLayoutPanel4.TabIndex = 14;
             // 
@@ -298,92 +294,6 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btn_search
-            // 
-            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_search.Enabled = false;
-            this.btn_search.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Bold);
-            this.btn_search.Location = new System.Drawing.Point(594, 3);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(70, 25);
-            this.btn_search.TabIndex = 18;
-            this.btn_search.Text = "Search";
-            this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Visible = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
-            // filter_by_status
-            // 
-            this.filter_by_status.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.filter_by_status.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.filter_by_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.filter_by_status.Enabled = false;
-            this.filter_by_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.filter_by_status.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.filter_by_status.FormattingEnabled = true;
-            this.filter_by_status.Items.AddRange(new object[] {
-            "All",
-            "Active",
-            "InActive"});
-            this.filter_by_status.Location = new System.Drawing.Point(200, 3);
-            this.filter_by_status.Name = "filter_by_status";
-            this.filter_by_status.Size = new System.Drawing.Size(191, 30);
-            this.filter_by_status.TabIndex = 15;
-            this.filter_by_status.Tag = "Select Status";
-            this.filter_by_status.Visible = false;
-            this.filter_by_status.SelectedIndexChanged += new System.EventHandler(this.combo_status_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(87, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 18);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Filter By Status";
-            this.label1.Visible = false;
-            // 
-            // text_search
-            // 
-            this.text_search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.text_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_search.Enabled = false;
-            this.text_search.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.text_search.Location = new System.Drawing.Point(397, 3);
-            this.text_search.Name = "text_search";
-            this.text_search.Size = new System.Drawing.Size(191, 26);
-            this.text_search.TabIndex = 17;
-            this.text_search.Visible = false;
-            this.text_search.TextChanged += new System.EventHandler(this.text_search_TextChanged);
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 4;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62531F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62531F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62531F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.12407F));
-            this.tableLayoutPanel5.Controls.Add(this.text_search, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.filter_by_status, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btn_search, 3, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(16, 461);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(667, 31);
-            this.tableLayoutPanel5.TabIndex = 10;
-            // 
             // Form_Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,7 +301,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 462);
             this.Controls.Add(this.tableLayoutPanel4);
-            this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -407,8 +316,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Students)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -429,11 +336,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.ComboBox filter_by_status;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox text_search;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
     }
 }
 

@@ -118,6 +118,7 @@ namespace MiniProject
                 dataGridView_Students.Columns.Insert(columnIndex1, deleteButtonColumn);
             }
         }
+        
 
         private void MiniProject_Load(object sender, EventArgs e)
         {
@@ -213,35 +214,35 @@ namespace MiniProject
 
         private void combo_status_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(filter_by_status.Text == "Active")
-            {
-                loadDataGridView(5);
-            }
-            else if(filter_by_status.Text == "InActive")
-            {
-                loadDataGridView(6);
-            }else if (filter_by_status.Text == "All")
-            {
-                loadDataGridView(0);
-            }
+            //if(filter_by_status.Text == "Active")
+            //{
+            //    loadDataGridView(5);
+            //}
+            //else if(filter_by_status.Text == "InActive")
+            //{
+            //    loadDataGridView(6);
+            //}else if (filter_by_status.Text == "All")
+            //{
+            //    loadDataGridView(0);
+            //}
         }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            string search = text_search.Text;
-            if(search != "")
-            {
-                MessageBox.Show("Search");
-                loadDataGridView(0, search);
-            }
+            //string search = text_search.Text;
+            //if(search != "")
+            //{
+            //    MessageBox.Show("Search");
+            //    loadDataGridView(0, search);
+            //}
         }
 
         private void text_search_TextChanged(object sender, EventArgs e)
         {
-            if(text_search.Text == "")
-            {
-                loadDataGridView(0);
-            }
+            //if(text_search.Text == "")
+            //{
+            //    loadDataGridView(0);
+            //}
         }
 
         private void button3_Click_1(object sender, EventArgs e)
