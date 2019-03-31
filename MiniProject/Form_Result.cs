@@ -19,6 +19,9 @@ namespace MiniProject
         int RubricId = 0;
         double total_marks = 0;
         double obtained_marks = 0;
+        string assessment_name = "";
+        int assessment_id = 0;
+        double assessment_total_marks = 0;
 
         public Form_Result()
         {
@@ -27,13 +30,12 @@ namespace MiniProject
         private void StylizeGridView()
         {
             // Changing Names Of The Grid View Columns Headings
-            dataGridView_Result.Columns[0].HeaderText = "Id";
-            dataGridView_Result.Columns[1].HeaderText = "First Name";
-            dataGridView_Result.Columns[2].HeaderText = "Last Name";
-            dataGridView_Result.Columns[3].HeaderText = "Registeration#";
+            dataGridView_Result.Columns[0].HeaderText = "Name";
+            dataGridView_Result.Columns[1].HeaderText = "Contact#";
+            dataGridView_Result.Columns[2].HeaderText = "Email";
+            dataGridView_Result.Columns[3].HeaderText = "Assessment Title";
             dataGridView_Result.Columns[4].HeaderText = "Obtained Marks";
             dataGridView_Result.Columns[5].HeaderText = "Total Marks";
-            dataGridView_Result.Columns[6].HeaderText = "Evaluation Date";
             
             // END:: NAMES
 
@@ -73,61 +75,102 @@ namespace MiniProject
                 total_marks = (int)cmd.ExecuteScalar();
             }
 
+            using (SqlCommand cmd = new SqlCommand("SELECT AssessmentId FROM AssessmentComponent WHERE Id='" + AssessmentComponentId + "'", conn))
+            {
+                assessment_id = (int)cmd.ExecuteScalar();
+            }
+
+            using (SqlCommand cmd = new SqlCommand("SELECT Title FROM Assessment WHERE Id='" + assessment_id + "'", conn))
+            {
+                assessment_name = (string)cmd.ExecuteScalar();
+            }
+
+
+            using (SqlCommand cmd = new SqlCommand("SELECT TotalMarks FROM Assessment WHERE Id='" + assessment_id + "'", conn))
+            {
+                assessment_total_marks = (int)cmd.ExecuteScalar();
+            }
+
             obtained_marks = (student_level / max_level) * total_marks;
         }
 
         private void loadDataGridView()
         {
             conn.Open();
-
             //string oString = "Select Student.Id,Student.FirstName,Student.LastName,Student.RegistrationNumber,StudentResult.AssessmentComponentId,StudentResult.RubricMeasurementId,StudentResult.EvaluationDate from Student INNER JOIN StudentResult ON Student.Id = StudentResult.StudentId";
             //SqlCommand oCmd = new SqlCommand(oString, conn);
-            using (SqlConnection connection = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True"))
+            using (SqlConnection connection001 = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True"))
             {
-                connection.Open();
-                using (SqlCommand oCmd = new SqlCommand("Select Student.Id,Student.FirstName,Student.LastName,Student.RegistrationNumber,StudentResult.AssessmentComponentId,StudentResult.RubricMeasurementId,StudentResult.EvaluationDate from Student INNER JOIN StudentResult ON Student.Id = StudentResult.StudentId", connection))
+                connection001.Open();
+                using (SqlCommand oCmd001 = new SqlCommand("Select * from Assessment", connection001))
                 {
-                    using (SqlDataReader oReader = oCmd.ExecuteReader())
+                    using (SqlDataReader oReader001 = oCmd001.ExecuteReader())
                     {
-                        while (oReader.Read())
+                        while (oReader001.Read())
                         {
-                            calculate(oReader["RubricMeasurementId"].ToString(), oReader["AssessmentComponentId"].ToString());
-                            //MessageBox.Show(Convert.ToString(student_level/max_level));
-                            //ADDING ROWS
-                            this.dataGridView_Result.Rows.Add(oReader["Id"].ToString(), oReader["FirstName"].ToString(), oReader["LastName"].ToString(), oReader["RegistrationNumber"].ToString(), obtained_marks,total_marks, oReader["EvaluationDate"].ToString());
+                            using (SqlCommand cmd = new SqlCommand("SELECT Title FROM Assessment WHERE Id='" + oReader001["Id"].ToString() + "'", conn))
+                            {
+                                assessment_name = (string)cmd.ExecuteScalar();
+                            }
+
+                            using (SqlConnection connection = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True"))
+                            {
+                                connection.Open();
+                                using (SqlCommand oCmd = new SqlCommand("Select * from Student", connection))
+                                {
+                                    using (SqlDataReader oReader = oCmd.ExecuteReader())
+                                    {
+                                        while (oReader.Read())
+                                        {
+                                            double total_marks_in_assignment = 0;
+                                            using (SqlConnection connection1 = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True"))
+                                            {
+                                                connection1.Open();
+                                                using (SqlCommand oCmd1 = new SqlCommand("Select * from AssessmentComponent where AssessmentId = '" + oReader001["Id"].ToString() + "'", connection1))
+                                                {
+                                                    using (SqlDataReader oReader1 = oCmd1.ExecuteReader())
+                                                    {
+                                                        while (oReader1.Read())
+                                                        {
+                                                            using (SqlConnection connection2 = new SqlConnection("Data Source=NUMAIRPC;Initial Catalog=ProjectB;Integrated Security=True"))
+                                                            {
+                                                                connection2.Open();
+                                                                using (SqlCommand oCmd2 = new SqlCommand("Select * from StudentResult where StudentId = '" + Convert.ToString(oReader["Id"]) + "' AND AssessmentComponentId = '" + Convert.ToString(oReader1["Id"]) + "'", connection2))
+                                                                {
+                                                                    using (SqlDataReader oReader2 = oCmd2.ExecuteReader())
+                                                                    {
+                                                                        while (oReader2.Read())
+                                                                        {
+                                                                            calculate(oReader2["RubricMeasurementId"].ToString(), oReader2["AssessmentComponentId"].ToString());
+                                                                            total_marks_in_assignment += obtained_marks;
+                                                                        }
+
+                                                                        connection2.Close();
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        connection1.Close();
+                                                    }
+                                                }
+                                            }
+                                            if (total_marks_in_assignment != 0)
+                                            {
+                                                // YAHAN BAQI CODE ANAA HAIs
+                                                this.dataGridView_Result.Rows.Add(Convert.ToString(oReader["FirstName"]) + " " + Convert.ToString(oReader["LastName"]), Convert.ToString(oReader["Contact"]), Convert.ToString(oReader["Email"]), assessment_name , total_marks_in_assignment.ToString(), assessment_total_marks.ToString());
+                                            }
+                                        }
+                                        connection.Close();
+                                    }
+                                }
+                            }
                         }
 
-                        connection.Close();
+                        connection001.Close();
                     }
                 }
             }
-            //Buttons
-
-            ////Edit
-            //DataGridViewButtonColumn EditButtonColumn = new DataGridViewButtonColumn();
-            //EditButtonColumn.Name = "Edit";
-            //EditButtonColumn.Text = "Edit";
-            //EditButtonColumn.DefaultCellStyle.NullValue = "Edit";
-            //int columnIndex = 7;
-            //if (dataGridView_Result.Columns["Edit"] == null)
-            //{
-            //    dataGridView_Result.Columns.Insert(columnIndex, EditButtonColumn);
-            //}
-
-            ////Delete
-            //DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
-            //deleteButtonColumn.Name = "Delete";
-            //deleteButtonColumn.Text = "Delete";
-            //deleteButtonColumn.DefaultCellStyle.NullValue = "Delete";
-            //int columnIndex1 = 8;
-            //if (dataGridView_Result.Columns["Delete"] == null)
-            //{
-            //    dataGridView_Result.Columns.Insert(columnIndex1, deleteButtonColumn);
-            //}
-
-            //dataGridView_Result.Columns[7].HeaderText = "Edit";
-            //dataGridView_Result.Columns[8].HeaderText = "Delete";
-
         }
 
         private void add_button_Click(object sender, EventArgs e)

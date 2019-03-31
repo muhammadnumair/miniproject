@@ -34,29 +34,22 @@
             this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.text_search = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.filter_by_status = new System.Windows.Forms.ComboBox();
-            this.btn_search = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_Result = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RegisterationNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssessmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ObtainedMarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalMarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EvaluationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.add_button = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.form_heading = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.form_heading = new System.Windows.Forms.Label();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Result)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -177,89 +170,6 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 4;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62531F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62531F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62531F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.12407F));
-            this.tableLayoutPanel5.Controls.Add(this.text_search, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.filter_by_status, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btn_search, 3, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(16, 460);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(667, 31);
-            this.tableLayoutPanel5.TabIndex = 18;
-            // 
-            // text_search
-            // 
-            this.text_search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.text_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_search.Enabled = false;
-            this.text_search.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.text_search.Location = new System.Drawing.Point(397, 3);
-            this.text_search.Name = "text_search";
-            this.text_search.Size = new System.Drawing.Size(191, 26);
-            this.text_search.TabIndex = 17;
-            this.text_search.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(87, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 18);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Filter By Status";
-            this.label1.Visible = false;
-            // 
-            // filter_by_status
-            // 
-            this.filter_by_status.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.filter_by_status.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.filter_by_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.filter_by_status.Enabled = false;
-            this.filter_by_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.filter_by_status.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.filter_by_status.FormattingEnabled = true;
-            this.filter_by_status.Items.AddRange(new object[] {
-            "All",
-            "Active",
-            "InActive"});
-            this.filter_by_status.Location = new System.Drawing.Point(200, 3);
-            this.filter_by_status.Name = "filter_by_status";
-            this.filter_by_status.Size = new System.Drawing.Size(191, 30);
-            this.filter_by_status.TabIndex = 15;
-            this.filter_by_status.Tag = "Select Status";
-            this.filter_by_status.Visible = false;
-            // 
-            // btn_search
-            // 
-            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_search.Enabled = false;
-            this.btn_search.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Bold);
-            this.btn_search.Location = new System.Drawing.Point(594, 3);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(70, 25);
-            this.btn_search.TabIndex = 18;
-            this.btn_search.Text = "Search";
-            this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Visible = false;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -283,58 +193,46 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_Result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Result.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.FirstName,
-            this.LastName,
-            this.RegisterationNumber,
+            this.Name,
+            this.Contact,
+            this.Email,
+            this.AssessmentName,
             this.ObtainedMarks,
-            this.TotalMarks,
-            this.EvaluationDate});
+            this.TotalMarks});
             this.dataGridView_Result.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_Result.Name = "dataGridView_Result";
             this.dataGridView_Result.Size = new System.Drawing.Size(674, 298);
             this.dataGridView_Result.TabIndex = 0;
             // 
-            // Id
+            // Name
             // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
             // 
-            // FirstName
+            // Contact
             // 
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
+            this.Contact.HeaderText = "Contact";
+            this.Contact.Name = "Contact";
             // 
-            // LastName
+            // Email
             // 
-            this.LastName.HeaderText = "Last Name";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
             // 
-            // RegisterationNumber
+            // AssessmentName
             // 
-            this.RegisterationNumber.HeaderText = "Registeration Number";
-            this.RegisterationNumber.Name = "RegisterationNumber";
-            this.RegisterationNumber.ReadOnly = true;
+            this.AssessmentName.HeaderText = "AssessmentName";
+            this.AssessmentName.Name = "AssessmentName";
             // 
             // ObtainedMarks
             // 
-            this.ObtainedMarks.HeaderText = "Obtained Marks";
+            this.ObtainedMarks.HeaderText = "ObtainedMarks";
             this.ObtainedMarks.Name = "ObtainedMarks";
-            this.ObtainedMarks.ReadOnly = true;
             // 
             // TotalMarks
             // 
-            this.TotalMarks.HeaderText = "Total Marks";
+            this.TotalMarks.HeaderText = "TotalMarks";
             this.TotalMarks.Name = "TotalMarks";
-            // 
-            // EvaluationDate
-            // 
-            this.EvaluationDate.HeaderText = "Evaluation Date";
-            this.EvaluationDate.Name = "EvaluationDate";
-            this.EvaluationDate.ReadOnly = true;
             // 
             // tableLayoutPanel2
             // 
@@ -404,17 +302,6 @@
             this.panel1.Size = new System.Drawing.Size(704, 52);
             this.panel1.TabIndex = 5;
             // 
-            // form_heading
-            // 
-            this.form_heading.AutoSize = true;
-            this.form_heading.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_heading.ForeColor = System.Drawing.Color.White;
-            this.form_heading.Location = new System.Drawing.Point(14, 8);
-            this.form_heading.Name = "form_heading";
-            this.form_heading.Size = new System.Drawing.Size(66, 35);
-            this.form_heading.TabIndex = 3;
-            this.form_heading.Text = "CMS";
-            // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -433,6 +320,17 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // form_heading
+            // 
+            this.form_heading.AutoSize = true;
+            this.form_heading.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_heading.ForeColor = System.Drawing.Color.White;
+            this.form_heading.Location = new System.Drawing.Point(14, 8);
+            this.form_heading.Name = "form_heading";
+            this.form_heading.Size = new System.Drawing.Size(66, 35);
+            this.form_heading.TabIndex = 3;
+            this.form_heading.Text = "CMS";
+            // 
             // Form_Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,17 +338,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 462);
             this.Controls.Add(this.tableLayoutPanel4);
-            this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form_Result";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Result";
             this.Load += new System.EventHandler(this.Form_Result_Load);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Result)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -470,11 +364,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox text_search;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox filter_by_status;
-        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView dataGridView_Result;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -483,13 +372,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label form_heading;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RegisterationNumber;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contact;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AssessmentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ObtainedMarks;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalMarks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EvaluationDate;
-        private System.Windows.Forms.Button button5;
     }
 }
