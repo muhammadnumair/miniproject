@@ -92,7 +92,7 @@ namespace MiniProject
                         while (oReader.Read())
                         {
                             calculate(oReader["RubricMeasurementId"].ToString(), oReader["AssessmentComponentId"].ToString());
-                            MessageBox.Show(Convert.ToString(student_level/max_level));
+                            //MessageBox.Show(Convert.ToString(student_level/max_level));
                             //ADDING ROWS
                             this.dataGridView_Result.Rows.Add(oReader["Id"].ToString(), oReader["FirstName"].ToString(), oReader["LastName"].ToString(), oReader["RegistrationNumber"].ToString(), obtained_marks,total_marks, oReader["EvaluationDate"].ToString());
                         }
@@ -103,30 +103,30 @@ namespace MiniProject
             }
             //Buttons
 
-            //Edit
-            DataGridViewButtonColumn EditButtonColumn = new DataGridViewButtonColumn();
-            EditButtonColumn.Name = "Edit";
-            EditButtonColumn.Text = "Edit";
-            EditButtonColumn.DefaultCellStyle.NullValue = "Edit";
-            int columnIndex = 7;
-            if (dataGridView_Result.Columns["Edit"] == null)
-            {
-                dataGridView_Result.Columns.Insert(columnIndex, EditButtonColumn);
-            }
+            ////Edit
+            //DataGridViewButtonColumn EditButtonColumn = new DataGridViewButtonColumn();
+            //EditButtonColumn.Name = "Edit";
+            //EditButtonColumn.Text = "Edit";
+            //EditButtonColumn.DefaultCellStyle.NullValue = "Edit";
+            //int columnIndex = 7;
+            //if (dataGridView_Result.Columns["Edit"] == null)
+            //{
+            //    dataGridView_Result.Columns.Insert(columnIndex, EditButtonColumn);
+            //}
 
-            //Delete
-            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
-            deleteButtonColumn.Name = "Delete";
-            deleteButtonColumn.Text = "Delete";
-            deleteButtonColumn.DefaultCellStyle.NullValue = "Delete";
-            int columnIndex1 = 8;
-            if (dataGridView_Result.Columns["Delete"] == null)
-            {
-                dataGridView_Result.Columns.Insert(columnIndex1, deleteButtonColumn);
-            }
+            ////Delete
+            //DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            //deleteButtonColumn.Name = "Delete";
+            //deleteButtonColumn.Text = "Delete";
+            //deleteButtonColumn.DefaultCellStyle.NullValue = "Delete";
+            //int columnIndex1 = 8;
+            //if (dataGridView_Result.Columns["Delete"] == null)
+            //{
+            //    dataGridView_Result.Columns.Insert(columnIndex1, deleteButtonColumn);
+            //}
 
-            dataGridView_Result.Columns[7].HeaderText = "Edit";
-            dataGridView_Result.Columns[8].HeaderText = "Delete";
+            //dataGridView_Result.Columns[7].HeaderText = "Edit";
+            //dataGridView_Result.Columns[8].HeaderText = "Delete";
 
         }
 
@@ -175,6 +175,12 @@ namespace MiniProject
             Form_Result f = new Form_Result();
             f.Show();
             this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form_report f = new Form_report();
+            f.Show();
         }
     }
 }

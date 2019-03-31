@@ -348,5 +348,16 @@ namespace MiniProject
             f.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form_report f = new Form_report();
+            f.Show();
+        }
+
+        private void dataGridView_Students_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

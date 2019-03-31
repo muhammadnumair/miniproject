@@ -21,3 +21,5 @@ F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_MarkAttendence.resources
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_AddNewResult.resources
 F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_Result.resources
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\bin\Debug\itextsharp.dll
+F:\Six Semester\DBMS\Mini Project\MiniProject\MiniProject\obj\Debug\MiniProject.Form_report.resources

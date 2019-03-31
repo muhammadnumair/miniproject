@@ -31,16 +31,16 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboc_assessment_component = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.combo_assessment = new System.Windows.Forms.ComboBox();
-            this.add_button = new System.Windows.Forms.Button();
-            this.error_msg = new System.Windows.Forms.Label();
             this.combo_student = new System.Windows.Forms.ComboBox();
+            this.add_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboc_assessment_component = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.combo_mesure_level = new System.Windows.Forms.ComboBox();
+            this.error_msg = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -102,20 +102,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(351, 298);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
-            // comboc_assessment_component
-            // 
-            this.comboc_assessment_component.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboc_assessment_component.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboc_assessment_component.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.comboc_assessment_component.FormattingEnabled = true;
-            this.comboc_assessment_component.Location = new System.Drawing.Point(3, 151);
-            this.comboc_assessment_component.Name = "comboc_assessment_component";
-            this.comboc_assessment_component.Size = new System.Drawing.Size(345, 30);
-            this.comboc_assessment_component.TabIndex = 3;
-            this.comboc_assessment_component.SelectedIndexChanged += new System.EventHandler(this.comboc_assessment_component_SelectedIndexChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -136,17 +122,6 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Assessment";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.label4.Location = new System.Drawing.Point(3, 183);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 22);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Rubric Measurement Level";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // combo_assessment
             // 
             this.combo_assessment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -161,30 +136,6 @@
             this.combo_assessment.TabIndex = 2;
             this.combo_assessment.SelectedIndexChanged += new System.EventHandler(this.combo_assessment_SelectedIndexChanged);
             // 
-            // add_button
-            // 
-            this.add_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.add_button.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.add_button.Location = new System.Drawing.Point(3, 246);
-            this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(164, 49);
-            this.add_button.TabIndex = 15;
-            this.add_button.Text = "Add Result";
-            this.add_button.UseVisualStyleBackColor = true;
-            this.add_button.Click += new System.EventHandler(this.add_button_Click);
-            // 
-            // error_msg
-            // 
-            this.error_msg.AutoSize = true;
-            this.error_msg.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error_msg.ForeColor = System.Drawing.Color.Red;
-            this.error_msg.Location = new System.Drawing.Point(50, 399);
-            this.error_msg.Name = "error_msg";
-            this.error_msg.Size = new System.Drawing.Size(278, 22);
-            this.error_msg.TabIndex = 11;
-            this.error_msg.Text = "Please Fill In All The Required Fields";
-            // 
             // combo_student
             // 
             this.combo_student.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -198,6 +149,19 @@
             this.combo_student.Size = new System.Drawing.Size(345, 30);
             this.combo_student.TabIndex = 21;
             // 
+            // add_button
+            // 
+            this.add_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.add_button.Font = new System.Drawing.Font("Trebuchet MS", 12F);
+            this.add_button.Location = new System.Drawing.Point(3, 246);
+            this.add_button.Name = "add_button";
+            this.add_button.Size = new System.Drawing.Size(164, 49);
+            this.add_button.TabIndex = 15;
+            this.add_button.Text = "Add Result";
+            this.add_button.UseVisualStyleBackColor = true;
+            this.add_button.Click += new System.EventHandler(this.add_button_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -207,6 +171,31 @@
             this.label1.Size = new System.Drawing.Size(174, 22);
             this.label1.TabIndex = 23;
             this.label1.Text = "Assessment Component";
+            // 
+            // comboc_assessment_component
+            // 
+            this.comboc_assessment_component.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboc_assessment_component.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboc_assessment_component.Font = new System.Drawing.Font("Trebuchet MS", 12F);
+            this.comboc_assessment_component.FormattingEnabled = true;
+            this.comboc_assessment_component.Location = new System.Drawing.Point(3, 151);
+            this.comboc_assessment_component.Name = "comboc_assessment_component";
+            this.comboc_assessment_component.Size = new System.Drawing.Size(345, 30);
+            this.comboc_assessment_component.TabIndex = 3;
+            this.comboc_assessment_component.SelectedIndexChanged += new System.EventHandler(this.comboc_assessment_component_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F);
+            this.label4.Location = new System.Drawing.Point(3, 183);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(197, 22);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Rubric Measurement Level";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // combo_mesure_level
             // 
@@ -220,6 +209,17 @@
             this.combo_mesure_level.Name = "combo_mesure_level";
             this.combo_mesure_level.Size = new System.Drawing.Size(345, 30);
             this.combo_mesure_level.TabIndex = 24;
+            // 
+            // error_msg
+            // 
+            this.error_msg.AutoSize = true;
+            this.error_msg.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error_msg.ForeColor = System.Drawing.Color.Red;
+            this.error_msg.Location = new System.Drawing.Point(50, 399);
+            this.error_msg.Name = "error_msg";
+            this.error_msg.Size = new System.Drawing.Size(278, 22);
+            this.error_msg.TabIndex = 11;
+            this.error_msg.Text = "Please Fill In All The Required Fields";
             // 
             // Form_AddNewResult
             // 

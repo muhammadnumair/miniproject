@@ -36,9 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.text_level = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.combo_rubrics = new System.Windows.Forms.ComboBox();
             this.add_button = new System.Windows.Forms.Button();
             this.error_msg = new System.Windows.Forms.Label();
+            this.combo_rubrics = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -151,20 +151,6 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Rubric*";
             // 
-            // combo_rubrics
-            // 
-            this.combo_rubrics.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.combo_rubrics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_rubrics.Enabled = false;
-            this.combo_rubrics.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.combo_rubrics.FormattingEnabled = true;
-            this.combo_rubrics.Location = new System.Drawing.Point(3, 157);
-            this.combo_rubrics.Name = "combo_rubrics";
-            this.combo_rubrics.Size = new System.Drawing.Size(345, 30);
-            this.combo_rubrics.TabIndex = 20;
-            // 
             // add_button
             // 
             this.add_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -188,6 +174,20 @@
             this.error_msg.Size = new System.Drawing.Size(278, 22);
             this.error_msg.TabIndex = 8;
             this.error_msg.Text = "Please Fill In All The Required Fields";
+            // 
+            // combo_rubrics
+            // 
+            this.combo_rubrics.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.combo_rubrics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_rubrics.Enabled = false;
+            this.combo_rubrics.Font = new System.Drawing.Font("Trebuchet MS", 12F);
+            this.combo_rubrics.FormattingEnabled = true;
+            this.combo_rubrics.Location = new System.Drawing.Point(3, 157);
+            this.combo_rubrics.Name = "combo_rubrics";
+            this.combo_rubrics.Size = new System.Drawing.Size(345, 30);
+            this.combo_rubrics.TabIndex = 20;
             // 
             // Form_AddLevel
             // 
